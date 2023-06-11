@@ -1,9 +1,21 @@
+import { IconContext } from "react-icons";
+
 import {
   StatisticBox,
   StatisticText,
   StatisticCounter,
 } from './StatisticItem.styled';
 
-export const StatisticItem = ({ title }) => {
-  return <div>{title && <h2>Hello</h2>} </div>;
+
+export const StatisticItem = ({ title, total, icon }) => {
+  console.log(icon)
+  return (
+ <StatisticBox>
+      <IconContext.Provider value={{size: 30}}>{icon} </IconContext.Provider>
+      <StatisticCounter>{ total}</StatisticCounter>
+      <StatisticText>{ title}</StatisticText>
+  </StatisticBox>
+  )
+  
+ 
 };
